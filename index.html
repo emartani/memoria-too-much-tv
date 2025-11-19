@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da Memória</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJBPR76GD5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RJBPR76GD5');
+</script>
+
+<body>
+  <h1>Jogo da Memória: Muito tempo de tela - Too much screen time!</h1>
+
+  <div class="menu">
+    <button onclick="startGame()">▶️ Iniciar Jogo</button>
+  </div>
+
+  <div class="grid-wrapper">
+    <div class="grid" id="gameGrid"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

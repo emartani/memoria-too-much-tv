@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+body {
+  font-family: 'Comic Neue', cursive;
+  text-align: center;
+  background: linear-gradient(to bottom, #a2d4f5, #fceabb);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 20px;
+  color: #ff4081;
+  text-shadow: 1px 1px #fff;
+}
+
+.menu {
+  margin: 20px;
+}
+
+button {
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffca28;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #ffd54f;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  padding: 10px;
+  margin: 0 auto;
+  /* Remova justify-content aqui; quem define as colunas é grid-template-columns */
+}
+
+/* Novo layout fixo */
+.fixed-grid {
+  /* Para mobile: colunas fluídas com mínimo de 140px */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  max-width: 800px; /* ajuste conforme seu design */
+}
+
+/* Em telas maiores, force 5 colunas (10 cartas = 5 pares) */
+@media (min-width: 768px) {
+  .fixed-grid {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 900px; /* opcional */
+  }
+}
+
+.card {
+  background: #fff3e0;
+  border: 3px solid #ffb74d;
+  border-radius: 12px;
+  padding: 10px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card img {
+  width: 130px;
+  height: 130px;
+  margin-bottom: 5px;
+  object-fit: contain;
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
+.matched {
+  background: #c8e6c9;
+  border-color: #66bb6a;
+  cursor: default;
+  transform: scale(1.05);
+}
+
+.translation {
+  font-size: 0.8em;
+  color: #555;
+  margin-top: 5px;
+}
+
+#congratsScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: #4caf50;
+  z-index: 999;
+}
+
+#congratsScreen button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1em;
+  background-color: #ffca28;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 480px) {
+  .card {
+    font-size: 0.9em;
+    height: 140px;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
