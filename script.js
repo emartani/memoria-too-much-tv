@@ -46,7 +46,10 @@ function startGame() {
   isLocked = false;
 
   grid.className = "grid";
-  grid.classList.add("fixed-grid"); // classe única no CSS
+  grid.classList.add("fixed-grid");
+
+  // Fala a frase em português ao iniciar
+  speak("O que pode acontecer se você passar muito tempo nas telas!", "pt-BR");
 
   // 5 frases → duplicadas = 10 cartas
   let phrases = shuffleArray(allPhrases).slice(0, 5);
